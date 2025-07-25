@@ -1,0 +1,13 @@
+project_name:
+    type: str
+    help: 'What is your MC3D project name? The final name will be: mc3d-<project_name>'
+
+_subdirectory: template
+_message_after_copy: |
+    The `mc3d-{{project_name}}` project has been created successfully!
+
+    Next steps:
+
+    1. Install the project package in your current environment.
+
+       pip install -e mc3d-{{project_name}}
