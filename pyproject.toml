@@ -7,3 +7,17 @@ dependencies = [
 [tool.hatch.envs.docs.scripts]
 build = "mkdocs build --clean --strict"
 serve = "mkdocs serve --dev-addr localhost:8000"
+
+[tool.hatch.envs.template]
+dependencies = [
+  "copier",
+  "uv"
+]
+scripts.install = [
+  "copier copy . tmp -f -d project_name=test",
+  "uv pip install tmp/mc3d-test",
+]
+scripts.check = [
+  "copier copy . tmp -f -d project_name=test",
+  "hatch fmt -l --check tmp/mc3d-test",
+]
