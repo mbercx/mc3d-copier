@@ -25,3 +25,13 @@ classifiers = [
 
 [tool.hatch.version]
 path = "src/mc3d_{{project_name}}/__about__.py"
+
+[tool.hatch.envs.docs]
+dependencies = [
+  "mkdocs",
+  "mkdocs-material"
+]
+
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build --clean --strict"
+serve = "mkdocs serve --dev-addr localhost:8000"
